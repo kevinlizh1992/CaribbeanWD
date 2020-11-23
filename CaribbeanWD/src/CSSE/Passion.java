@@ -6,6 +6,9 @@ package CSSE;
  */
 public class Passion extends WeddingPackage {
 	
+	public Passion() {
+		setNumberOfGuests(10);
+	}
 	@Override
 	public double cost() {
 		return 899;
