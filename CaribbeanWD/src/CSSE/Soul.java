@@ -7,6 +7,10 @@ package CSSE;
 
 public class Soul extends WeddingPackage {
 	
+	public Passion() {
+		setNumberOfGuests(10);
+	}
+	
 	@Override
 	public double cost() {
 		return 1499;
