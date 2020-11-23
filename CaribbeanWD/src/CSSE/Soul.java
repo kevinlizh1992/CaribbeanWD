@@ -7,8 +7,8 @@ package CSSE;
 
 public class Soul extends WeddingPackage {
 	
-	public Passion() {
-		setNumberOfGuests(10);
+	public Soul() {
+		setNumberOfGuests(15);
 	}
 	
 	@Override
