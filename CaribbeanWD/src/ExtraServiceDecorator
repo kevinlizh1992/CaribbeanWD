@@ -1,8 +1,8 @@
 public abstract class ExtraServiceDecorator extends WeddingPackage{
       WeddingPackage weddingPackage;
       public abstract String getDescription();
-     // public abstract int getNumberofGuests();
-     // public abstract setNumberOfGuests(int);
+      public abstract int getNumberofGuests();
+      public abstract setNumberOfGuests(int);
 }
 
 public class DjMusic extends ExtraServiceDecorator{
@@ -11,10 +11,86 @@ public class DjMusic extends ExtraServiceDecorator{
       }
       
       public String getDescription(){
-              return weddingPackage.getDescription() + ", DJ Music for the whole event";
+              return weddingPackage.getDescription() + " with DJ Music for the whole event.";
       }
       
-      public double
-
-
+      public double cost(){
+              return 1600 + weddingPackage.cost();
+      }
 } 
+
+public class PhotoService extends ExtraServiceDecorator{
+      public PhotoService(WeddingPackage weddingPackage){
+              this.weddingPackage = weddingPackage;
+      }
+      
+      public String getDescription(){
+              return weddingPackage.getDescription() + " with photo 1.5 hours of continuous service with an album of 40 photos in high resolution.";
+      }
+      
+      public double cost(){
+              return 1000 + weddingPackage.cost();
+      }
+} 
+
+public class VideoRecording extends ExtraServiceDecorator{
+      public VideoRecording(WeddingPackage weddingPackage){
+              this.weddingPackage = weddingPackage;
+      }
+      
+      public String getDescription(){
+              return weddingPackage.getDescription() + " with video recording 2.5 hours during the event.";
+      }
+      
+      public double cost(){
+              return 650 + weddingPackage.cost();
+      }
+}
+
+public class PrivateDinnerBeach extends ExtraServiceDecorator{
+      public PrivateDinnerBeach(WeddingPackage weddingPackage){
+              this.weddingPackage = weddingPackage;
+      }
+      
+      public String getDescription(){
+              return weddingPackage.getDescription() + " with private dinner on the beach.";
+      }
+      
+      public int getNumberofGuests(){
+              return weddingPackage.getNumberofGuests();
+      }
+
+      public void setNumberOfGuests(int numberOfGuests){
+               this.weddingPackage.numberOfGuest = numberOfGuests + weddingPackage.numberOfGuest;
+      }
+      
+      public double cost(){
+              return 2700 + 50*numberOfGuests + weddingPackage.cost();
+      }
+} 
+
+
+public class ExtraGuest extends ExtraServiceDecorator{
+      public ExtraGuest(WeddingPackage weddingPackage){
+              this.weddingPackage = weddingPackage;
+      }
+      
+      public String getDescription(){
+              return weddingPackage.getDescription() + " with extra guest attending the ceremony.";
+      }
+      
+      public int getNumberofGuests(){
+              return weddingPackage.getNumberofGuests();
+      }
+
+      public void setNumberOfGuests(int numberOfGuests){
+               this.weddingPackage.numberOfGuest = numberOfGuests + weddingPackage.numberOfGuest;
+      }
+      
+      public double cost(){
+              return 40*numberOfGuests + weddingPackage.cost();
+      }
+} 
+
+
+
