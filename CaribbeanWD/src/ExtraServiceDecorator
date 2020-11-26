@@ -1,1 +1,20 @@
-public abstract class ExtraServiceDecorator extends Wedding
+public abstract class ExtraServiceDecorator extends WeddingPackage{
+      WeddingPackage weddingPackage;
+      public abstract String getDescription();
+     // public abstract int getNumberofGuests();
+     // public abstract setNumberOfGuests(int);
+}
+
+public class DjMusic extends ExtraServiceDecorator{
+      public DjMusic(WeddingPackage weddingPackage){
+              this.weddingPackage = weddingPackage;
+      }
+      
+      public String getDescription(){
+              return weddingPackage.getDescription() + ", DJ Music for the whole event";
+      }
+      
+      public double
+
+
+} 
